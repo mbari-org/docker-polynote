@@ -5,7 +5,7 @@ This is a docker container for running [polynote](https://polynote.org/) locally
 ## Usage
 
 ```bash
-docker run --p 8192:8192 -v $HOME/mynotebooks:/opt/polynote/notebooks --name polynote mbari/polynote
+docker run -p 8192:8192 -v $HOME/mynotebooks:/opt/polynote/notebooks --name polynote mbari/polynote
 ```
 
 ## Build
