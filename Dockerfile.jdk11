@@ -1,0 +1,35 @@
+FROM ubuntu:19.10
+LABEL maintainer="bschlining@gmail.com"
+
+WORKDIR /opt
+
+ENV PYTHONUNBUFFERED TRUE
+
+RUN apt-get update \
+  && apt-get install -y default-jdk python3
+
+RUN apt-get install -y python3-pip 
+
+ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
+RUN pip3 install \
+  jep \
+  jedi \
+  pyspark \
+  virtualenv \
+  numpy \
+  pandas
+
+# Install polynote, spark, and then cleanup
+RUN apt-get install -y curl
+RUN curl -L https://github.com/polynote/polynote/releases/download/0.2.13/polynote-dist.tar.gz | tar -xzvpf - 
+RUN curl -L http://apache.mirrors.hoobly.com/spark/spark-2.4.4/spark-2.4.4-bin-hadoop2.7.tgz | tar -xzvpf - \
+  && mv spark* spark
+
+ENV SPARK_HOME /opt/spark
+ENV PATH "$PATH:$JAVA_HOME/bin:$SPARK_HOME/bin:$SPARK_HOME/sbin"
+
+COPY config.yml ./polynote/config.yml
+
+EXPOSE 8192
+
+CMD bash polynote/polynote
