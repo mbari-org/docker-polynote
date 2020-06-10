@@ -64,7 +64,7 @@ RUN pip3 install --upgrade pip \
       xarray
 
 # Install polynote, spark, and then cleanup
-RUN curl -L https://github.com/polynote/polynote/releases/download/0.2.11/polynote-dist.tar.gz | tar -xzvpf - \
+RUN curl -L https://github.com/polynote/polynote/releases/download/0.2.13/polynote-dist.tar.gz | tar -xzvpf - \
   && curl -L http://apache.mirrors.hoobly.com/spark/spark-2.4.4/spark-2.4.4-bin-hadoop2.7.tgz | tar -xzvpf - \
   && mv spark* spark \
   && apk del .build-deps
