@@ -18,7 +18,7 @@ ENV JAVA_HOME /usr/lib/jvm/default-java/
 RUN pip3 install \
   jep \
   jedi \
-  pyspark==3.0.0 \
+  pyspark==3.0.1 \
   virtualenv \
   numpy \
   pandas
