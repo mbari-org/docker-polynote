@@ -13,6 +13,6 @@ docker run -p 8192:8192 -v $HOME/Documents/Notebooks:/opt/polynote/notebooks --n
 ### Java 11
 
 ```bash
-docker build -t mbari/polynote:0.3.12 -t mbari/polynote:latest -f Dockerfile.jdk11 .
+docker build -t mbari/polynote:0.4.1 -t mbari/polynote:latest -f Dockerfile.jdk11 .
 docker push mbari/polynote
 ```
