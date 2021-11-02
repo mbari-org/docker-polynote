@@ -18,14 +18,14 @@ ENV JAVA_HOME /usr/lib/jvm/default-java/
 RUN pip3 install \
   jep \
   jedi \
-  pyspark==3.1.2 \
+  pyspark==3.2.0 \
   virtualenv \
   numpy \
   pandas
 
 # Install polynote, spark, and then cleanup
-RUN curl -L https://github.com/polynote/polynote/releases/download/0.4.1/polynote-dist.tar.gz | tar -xzvpf - 
-RUN curl -L http://apache.claz.org/spark/spark-3.1.2/spark-3.1.2-bin-hadoop3.2.tgz | tar -xzvpf - \
+RUN curl -L https://github.com/polynote/polynote/releases/download/0.4.2/polynote-dist.tar.gz | tar -xzvpf - 
+RUN curl -L http://apache.claz.org/spark/spark-3.2.0/spark-3.2.0-bin-hadoop3.2.tgz | tar -xzvpf - \
   && mv spark* spark
 
 ENV PYSPARK_ALLOW_INSECURE_GATEWAY 1
