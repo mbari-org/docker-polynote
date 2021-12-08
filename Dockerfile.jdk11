@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 LABEL maintainer="bschlining@gmail.com"
 
 WORKDIR /opt
@@ -27,7 +27,7 @@ RUN pip3 install \
   virtualenv
 
 # Install polynote, spark, and then cleanup
-RUN curl -L https://github.com/polynote/polynote/releases/download/0.4.2/polynote-dist.tar.gz | tar -xzvpf - 
+RUN curl -L https://github.com/polynote/polynote/releases/download/0.4.3/polynote-dist.tar.gz | tar -xzvpf - 
 RUN curl -L https://dlcdn.apache.org/spark/spark-3.1.2/spark-3.1.2-bin-hadoop3.2.tgz| tar -xzvpf - \
   && mv spark* spark
 
