@@ -18,5 +18,5 @@ docker push mbari/polynote
 ```
 
 ```bash
-docker buildx build --platform linux/amd64,linux/arm64 --push -t mbari/polynote:0.4.4 -t mbari/polynote:latest -f Dockerfile.jdk11 .
+docker buildx build --platform linux/amd64,linux/arm64 --push -t mbari/polynote:0.4.5 -t mbari/polynote:latest -f Dockerfile.jdk11 .
 ```
